@@ -1,0 +1,13 @@
+- extends "base.jade"
+    block meta_title
+        | Welcome
+    block content
+        .jumbotron
+            h1 Welcome to {{ config.SITE_NAME }}
+            if True
+                p {{ config.HOME_MESSAGE }}
+            else
+                p Let's get learning!
+            a.btn.btn-large.btn-success(href="#") Sign up today
+
+

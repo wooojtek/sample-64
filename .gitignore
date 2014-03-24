@@ -1,0 +1,59 @@
+# Basics
+*.py[cod]
+*.pyc
+__pycache__
+
+# Vagrant
+.vagrant
+
+# SQLite
+*.db
+*.sqlite3
+
+# Git
+.git
+
+# Mercurial
+.hg
+
+# Logs
+*.log
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+
+# Translations
+*.mo
+*.pot
+
+# Build
+build/
+
+# Cruft
+.DS_Store
+
+# Pycharm
+.idea
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Vim
+*~
+*.sw[o-z]
+
+# Visual Studio
+*.sln
+*.suo
+*.pyproj
+obj/
+
+# Npm
+node_modules/
+
+# Sass & Compass
+.sass-cache

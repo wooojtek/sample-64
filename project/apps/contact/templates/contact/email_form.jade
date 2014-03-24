@@ -1,0 +1,10 @@
+- extends "base.jade"
+- load crispy_forms_tags
+    block meta_title
+        | Contact Us
+    block content
+        .jumbotron
+            h1 Contact Us
+        .row
+            .span6
+                {% crispy form form.helper %}
