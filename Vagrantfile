@@ -1,7 +1,7 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "hashicorp/precise64"
+  config.vm.box = "hashicorp/precise64" # using ubuntu 12.04 LTS x64
   config.vm.network "forwarded_port", guest:80, 
                     host:8080, auto_correct:true  
   config.vm.network "forwarded_port", guest:8000, 
@@ -10,8 +10,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.graceful_halt_timeout = 300
 
   config.vm.provider "virtualbox" do |v|
-    v.name ="sample_vm"
-    v.memory = 384
+    v.name ="sample_64_vm"
+    v.memory = 512
     v.customize ["modifyvm", :id, "--cpuexecutioncap", "90"]
     v.gui = false
   end
