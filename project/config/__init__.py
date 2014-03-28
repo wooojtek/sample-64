@@ -26,6 +26,8 @@ class Base(object):
         'SYSTEM_EMAIL_SUPPORT': ('support@xeontek.com', 'Email for Customer Support'),
         'SOCIAL_REGISTRATION': (True, 'Allow Social Registration and Sign In'),
         'HOME_MESSAGE': ('', 'The Default message shown on the home page.'),
+        'USER_SALUTATION': ('Hello User.', 'The personalised user salutations'),
+        'INTELLECTUAL_PROPERTY_INFO': ('All Rights Reserved.', 'Intellectual property message')
     }
     #### End Package: django-constance settings.
 

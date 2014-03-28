@@ -3,7 +3,7 @@
         | Welcome
     block content
         .jumbotron
-            h1 Welcome to {{ config.SITE_NAME }}
+            h1 {{ config.USER_SALUTATION }} Welcome to {{ config.SITE_NAME }}
             if True
                 p {{ config.HOME_MESSAGE }}
             else
