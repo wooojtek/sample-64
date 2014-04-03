@@ -1,4 +1,6 @@
 from django.forms import ModelForm
+# from crispy_forms.helper import FormHelper
+# from crispy_forms.layout import Submit
 
 from .models import Contact
 
@@ -6,6 +8,11 @@ from .models import Contact
 class ContactForm(ModelForm):
     class Meta:
         model = Contact
+
+        # def __init__(self, *args, **kwargs):
+        #     self.helper = FormHelper()
+        #     self.helper.add_input(Submit('submit', 'Submit'))
+        #     super(ContactForm, self).__init__(*args, **kwargs)
 
 
         # from crispy_forms.helper import FormHelper

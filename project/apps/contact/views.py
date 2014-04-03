@@ -5,9 +5,6 @@ from django.core.mail import send_mail
 from .forms import ContactForm
 
 
-template_name = "contact/email_form.jade"
-
-
 def contact(request):
     if request.method == 'POST':  # If the form has been submitted...
         form = ContactForm(request.POST)  # A form bound to the POST data

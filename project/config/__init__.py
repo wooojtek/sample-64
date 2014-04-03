@@ -60,6 +60,7 @@ class Apps(object):
     # apps local for this project go here.
     LOCAL_APPS = (
         'apps.contact',
+        'apps.faq',
     )
     INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
