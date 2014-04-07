@@ -1,21 +1,32 @@
-from django.shortcuts import render, get_object_or_404
+from django.core.urlresolvers import reverse_lazy
+from vanilla import CreateView, DeleteView, ListView, UpdateView
 
-from .models import QuestionType, Question
+from .models import Question
 
 
-def faq_index(request):
-    return render(request, 'faq/faq_index.jade', {
-        'question_types': QuestionType.objects.all(),
-        'questions': Question.objects.all()
-    })
+class ListQuestion(ListView):
+    template_name = 'faq/question_list.jade'
+    model = Question
 
-def question(request, slug):
-    question = get_object_or_404(Question, slug=slug)
-    return render(request, 'faq/question.jade', {'question': question})
 
-def question_type(request, slug):
-    question_type = get_object_or_404(QuestionType, slug=slug)
-    return render(request, 'faq/question_type.jade', {
-        'question_type': question_type,
-        'questions': Question.objects.filter(question_type=question_type)
-    })
+class CreateQuestion(CreateView):
+    template_name = 'faq/question_form.jade'
+    model = Question
+    success_url = reverse_lazy('list_question')
+
+
+class EditQuestion(UpdateView):
+    template_name = 'faq/question_form.jade'
+    model = Question
+    success_url = reverse_lazy('list_question')
+
+
+class DeleteQuestion(DeleteView):
+    model = Question
+    success_url = reverse_lazy('list_question')
+
+
+    # class DetailQuestion(DetailView):
+    #     template_name = 'faq/question_form.jade'
+    #     model = Question
+    #     success_url = reverse_lazy('list_question')

@@ -4,9 +4,8 @@ from .models import Contact
 
 
 class ContactAdmin(admin.ModelAdmin):
-    list_display = ['subject', 'email']
-    search_fields = ['subject', 'email', 'content']
-    list_filter = ['subject', 'email']
+    list_display = ['subject', 'name', 'email', 'phone', 'message']
+    list_filter = ['subject']
 
 
 admin.site.register(Contact, ContactAdmin)

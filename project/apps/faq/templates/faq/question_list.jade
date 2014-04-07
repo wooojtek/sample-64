@@ -1,0 +1,29 @@
+- extends "base.jade"
+    block meta_title
+        | FAQ
+    block content
+        .container-fluid
+            h1.page-header FAQ
+            | {% if question_list %}
+            | {% for question in question_list %}
+            .well.col-md-8
+                h2 {{ question.title }}
+                .panel.panel-info
+                    .panel-heading
+                        h3.panel-title {{ question.category }}
+                    .panel-body
+                        | {{ question.description }}
+                | {% for tag in question.tags.all %}
+                span.label.label-success {{ tag.name }}
+                | &nbsp
+                | {% endfor %}
+                .pull-right
+                    form(action="{% url 'delete_question' question.pk %}", method="POST")
+                        | {% csrf_token %}
+                        input.btn.btn-danger(type="submit", value="delete")
+                        | &nbsp
+                        a.btn.btn-warning(href="{% url 'edit_question' question.pk %}", role="button") edit
+            | {% endfor %}
+            | {% endif %}
+            .col-md-8
+                a.btn.btn-primary.btn-lg.btn-block(href="{% url 'create_question' %}", role="button") Create a new question

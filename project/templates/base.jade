@@ -4,7 +4,7 @@ html(lang="en", data-ng-app)
     head
         meta(charset="utf-8")
         meta(http-equiv="X-UA-Compatible" content="IE=edge")
-        title{% block meta_title %}{% endblock %} | {{ config.SITE_NAME }}
+        title {% block meta_title %}{% endblock %} | {{ config.SITE_NAME }}
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(name="description", content="{% block meta_description %}{% endblock %}")
         meta(name="robots", content="{% block meta_robots %}{% endblock %}")
@@ -32,11 +32,11 @@ html(lang="en", data-ng-app)
                             li.active
                                 a(href="{% url 'home' %}") Home
                             li
+                                a(href="{% url 'list_question' %}") FAQ
+                            li
                                 a(href="{% url 'admin:index' %}") Admin
                             li
                                 a(href="{% url 'contact' %}") Contact
-                            li
-                                a(href="{% url 'faq_index' %}") FAQ
 
             .container
                 block content
@@ -45,7 +45,7 @@ html(lang="en", data-ng-app)
                 .row-fluid
                     p &copy;
                         a(href="{{ config.SITE_URL }}") {{ config.SITE_NAME }}
-                        &nbsp; {% now "Y" %} . &nbsp; {{ config.INTELLECTUAL_PROPERTY_INFO }}
+                        | &nbsp; {% now "Y" %} . &nbsp; {{ config.INTELLECTUAL_PROPERTY_INFO }}
         block js
             script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js")
             script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js")

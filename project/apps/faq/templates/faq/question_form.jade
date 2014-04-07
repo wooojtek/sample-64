@@ -1,14 +1,14 @@
 - extends "base.jade"
 - load crispy_forms_tags
     block meta_title
-        | Contact Us
+        | Question
     block content
         .container-fluid
-            h1.page-header Contact Us
+            h1.page-header {% if question %}Edit question{% else %}Create question{% endif %}
             .well.col-md-8
                 form(action='.', method='POST')
                     | {% csrf_token %}
                     | {{ form|crispy }}
-                    input.btn.btn-primary.btn-submit(type="submit", value="Send")
+                    input.btn.btn-primary(type="submit", value="Save")
                     | &nbsp
-                    a.btn.btn-default(href="/") Cancel
+                    a.btn.btn-default(href="/faq") Cancel

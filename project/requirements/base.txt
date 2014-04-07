@@ -38,5 +38,5 @@ django-pipeline==1.3.23
 django-statsd==1.9.1
 django-storages==1.1.8
 django-stored-messages==0.2.1
-
-
+django-taggit==0.11.2
+django-vanilla-views==1.0.2

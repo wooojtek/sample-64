@@ -17,7 +17,7 @@ class Base(object):
 
     #### Package: django-constance settings.
     # See: https://github.com/comoga/django-constance
-    CONSTANCE_BACKEND = 'constance.backends.redisd.RedisBackend' # using Redis (default)
+    CONSTANCE_BACKEND = 'constance.backends.redisd.RedisBackend'  # using Redis (default)
     CONSTANCE_REDIS_CONNECTION = 'redis://vagrant:vagrant@localhost:6379/0'
     CONSTANCE_CONFIG = {
         'SITE_NAME': ('XeonTek', 'Website Name'),
@@ -30,7 +30,6 @@ class Base(object):
         'INTELLECTUAL_PROPERTY_INFO': ('All Rights Reserved.', 'Intellectual property message')
     }
     #### End Package: django-constance settings.
-
 
 
 class Apps(object):
@@ -50,12 +49,14 @@ class Apps(object):
         'allauth',  # registration
         'allauth.account',  # registration
         'allauth.socialaccount',  # registration
-        'constance', # dynamic settings
+        'constance',  # dynamic settings
         'crispy_forms',  # form layouts
-        'floppyforms', # html5 forms
+        'floppyforms',  # html5 forms
         'django_jinja',  # jinja2 integration
         'django_extensions',  # simple useful extensions
         'pipeline',  # asset packaging library
+        'taggit',  # simple tagging
+        'vanilla',  # simple class-based views
     )
     # apps local for this project go here.
     LOCAL_APPS = (

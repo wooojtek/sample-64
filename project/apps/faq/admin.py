@@ -4,9 +4,14 @@ from .models import QuestionType, Question
 
 
 class QuestionAdmin(admin.ModelAdmin):
-    list_display = ['title']
-    search_fields = ['title', 'description', 'category']
+    list_display = ['title', 'slug', 'category', 'description']
     list_filter = ['category']
+    # actions = None
+    # actions_on_top = False
+    # actions_on_bottom = False
+    # actions_selection_counter = False
+    # list_display_links = []
+    # list_editable = []
 
 
 admin.site.register(QuestionType)
