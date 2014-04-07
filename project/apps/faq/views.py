@@ -24,9 +24,3 @@ class EditQuestion(UpdateView):
 class DeleteQuestion(DeleteView):
     model = Question
     success_url = reverse_lazy('list_question')
-
-
-    # class DetailQuestion(DetailView):
-    #     template_name = 'faq/question_form.jade'
-    #     model = Question
-    #     success_url = reverse_lazy('list_question')

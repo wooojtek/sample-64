@@ -19,6 +19,3 @@ class Question(models.Model):
     description = models.TextField(max_length=3001, blank=True)
     category = models.OneToOneField('QuestionType', related_name='questions', blank=False)
     tags = TaggableManager()
-
-    # def get_absolute_url(self):
-    #     return reverse('faq.views.question', args=[self.slug])
