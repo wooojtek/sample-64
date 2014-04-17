@@ -10,6 +10,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
                        url(r'^$', HomePageView.as_view(), name="home"),
+                       url(r'', include('apps.blog.urls')),
                        url(r'', include('apps.contact.urls')),
                        url(r'', include('apps.faq.urls')),
                        url(r'^admin/', include(admin.site.urls)),

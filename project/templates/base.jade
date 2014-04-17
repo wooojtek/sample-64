@@ -32,6 +32,8 @@ html(lang="en", data-ng-app)
                             li.active
                                 a(href="{% url 'home' %}") Home
                             li
+                                a(href="{% url 'list_post' %}") Blog
+                            li
                                 a(href="{% url 'list_question' %}") FAQ
                             li
                                 a(href="{% url 'admin:index' %}") Admin
@@ -43,7 +45,8 @@ html(lang="en", data-ng-app)
 
             .container
                 .row-fluid
-                    p &copy;
+                    p.page-header
+                        | &copy;
                         a(href="{{ config.SITE_URL }}") {{ config.SITE_NAME }}
                         | &nbsp; {% now "Y" %} . &nbsp; {{ config.INTELLECTUAL_PROPERTY_INFO }}
         block js

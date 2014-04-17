@@ -56,12 +56,14 @@ class Apps(object):
         'django_extensions',  # simple useful extensions
         'pipeline',  # asset packaging library
         'taggit',  # simple tagging
+        'taggit_templatetags',  # taggit extras
         'vanilla',  # simple class-based views
     )
     # apps local for this project go here.
     LOCAL_APPS = (
+        'apps.blog',
         'apps.contact',
-        'apps.faq',
+        'apps.faq'
     )
     INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
