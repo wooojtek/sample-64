@@ -4,8 +4,8 @@ from .models import Category, Post
 
 
 class PostAdmin(admin.ModelAdmin):
-    list_display = ['title', 'slug', 'description', 'created', 'published']
-    list_filter = ['category', 'published']
+    list_display = ['title', 'slug', 'description']  #, 'created', 'published']
+    list_filter = ['category']  #, 'published']
 
 
 admin.site.register(Category)

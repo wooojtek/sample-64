@@ -21,13 +21,13 @@ class Post(models.Model):
     slug = AutoSlugField(populate_from='title', max_length=255,
                          unique=True, always_update=True, blank=False)
     description = models.TextField(max_length=3001, blank=True)
-    published = models.BooleanField(default=True)
-    created = models.DateTimeField(auto_now_add=True)
+    # published = models.BooleanField(default=True)
+    # created = models.DateTimeField(auto_now_add=True)
     category = models.ManyToManyField('Category', related_name='posts')
     tags = TaggableManager()
 
-    class Meta:
-        ordering = ['-created']
+    # class Meta:
+    #     ordering = ['-created']
 
     def __unicode__(self):
         return u'%s' % self.title

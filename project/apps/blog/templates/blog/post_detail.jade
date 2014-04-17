@@ -6,9 +6,9 @@
             h1.page-header Post
             article.col-md-8
                 h2 {{ post.title }}
-                p Posted on
-                    time(datetime='{{ post.created|date:c }}')
-                        | {{ post.created|date }}
+                //p Posted on
+                //    time(datetime='{{ post.created|date:c }}')
+                //        | {{ post.created|date }}
 
                 h5
                     | {% for category in post.category.all %}
