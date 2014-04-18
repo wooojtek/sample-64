@@ -52,6 +52,7 @@ class Apps(object):
         'constance',  # dynamic settings
         'crispy_forms',  # form layouts
         'floppyforms',  # html5 forms
+        'disqus',  # comments
         'django_jinja',  # jinja2 integration
         'django_extensions',  # simple useful extensions
         'pipeline',  # asset packaging library
@@ -77,7 +78,12 @@ class Assets(object):
     CRISPY_TEMPLATE_PACK = 'bootstrap3'
     #### end django-crispy-forms settings
 
-    #### django-jinja settings
+    #### django-diqus settings
+    DISQUS_API_KEY = 'Ca2SBpuQH1B4PKZt1lILnJnL6iogTabQeDBBBzlTeDgoiJlELoWm84VVwznYkD6M'
+    DISQUS_WEBSITE_SHORTNAME = 'jobplus'
+    #### end django-disqus settings
+
+    #     #### django-jinja settings
     DEFAULT_JINJA2_TEMPLATE_EXTENSION = '.jade'
     #### end django-jinja settings
 

@@ -1,15 +1,12 @@
 - extends "base.jade"
+- load disqus_tags
     block meta_title
-        | Post
+        | {{ post.title }}
     block content
         .container
             h1.page-header Post
             article.col-md-8
                 h2 {{ post.title }}
-                //p Posted on
-                //    time(datetime='{{ post.created|date:c }}')
-                //        | {{ post.created|date }}
-
                 h5
                     | {% for category in post.category.all %}
                     span
@@ -22,3 +19,4 @@
                     a.label.label-default(href='#') {{ tag.name }}
                     | &nbsp
                 | {% endfor %}
+                p {% disqus_show_comments %}

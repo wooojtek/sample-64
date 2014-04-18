@@ -28,6 +28,7 @@ django-celery==3.1.9
 django-configurations==0.8
 -e git+git://github.com/comoga/django-constance#egg=django-constance
 django-crispy-forms==1.4.0
+django-disqus==0.4.1
 django-floppyforms==1.1.1
 django-jinja==0.23.1
 django-extensions==1.3.3
