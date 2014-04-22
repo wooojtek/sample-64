@@ -1,32 +1,12 @@
-- extends "base.jade"
-- load taggit_extras
-    block meta_title
-        | Blog
-    block content
-        .container
-            h1.page-header Blog
-            | {% for post in post_list %}
-            article.col-md-8
-                h2
-                    a(href='{{ post.get_absolute_url }}') {{ post.title }}
-                h5
-                    | {% for category in post.category.all %}
-                    span
-                        a(href='#') {{ category.title }}
-                    | &nbsp
-                    | {% endfor %}
-                details
-                    summary Read post
-                    | {{ post.description }}
-                | {% for tag in post.tags.all %}
-                span
-                    a.label.label-default(href='#') {{ tag.name }}
-                | &nbsp
-                | {% endfor %}
-            | {% endfor %}
-            //.col-md-3.col-md-offset-1
-            //    h3 Tags
-            //    | {% for tag in tags %}
-            //    | {% get_tagcloud as tags %}
-            //    | &nbsp
-            //    | {% endfor %}
+- extends "base_blog.jade"
+
+block meta_title
+    | {{ block.super }}
+    | Posts
+block blog
+    | {% for post in post_list %}
+    h3
+        a(href='{{ post.get_absolute_url }}') {{ post.title }}
+    p {{ post.description|truncatewords:50 }}
+    hr
+    | {% endfor %}

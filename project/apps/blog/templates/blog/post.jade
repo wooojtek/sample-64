@@ -1,0 +1,12 @@
+h2 {{ post.title }}
+h5 {% for category in post.category.all %}
+    span
+        a(href='#') {{ category.title }}
+        | &nbsp
+    | {% endfor %}
+p {{ post.description }}
+    | {% for tag in post.tags.all %}
+span
+    a.label.label-default(href='#') {{ tag.name }}
+    | &nbsp
+    | {% endfor %}

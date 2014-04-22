@@ -7,6 +7,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 class Base(object):
     ALLOWED_HOSTS = []
+    # ALLOWED_INCLUDE_ROOTS = ()
     DEBUG = values.BooleanValue(True)
     TEMPLATE_DEBUG = values.BooleanValue(DEBUG)
     ROOT_URLCONF = 'config.urls'
@@ -43,6 +44,7 @@ class Apps(object):
         'django.contrib.messages',
         'django.contrib.staticfiles',
         'django.contrib.humanize',
+        'django.contrib.webdesign',
     )
     # third party apps
     THIRD_PARTY_APPS = (

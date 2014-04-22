@@ -12,6 +12,9 @@ class Category(models.Model):
     def __unicode__(self):
         return u'%s' % self.title
 
+    def get_absolute_url(self):
+        return reverse('category', args=[self.slug])
+
     class Meta:
         verbose_name_plural = 'categories'
 
@@ -24,13 +27,13 @@ class Post(models.Model):
     # published = models.BooleanField(default=True)
     # created = models.DateTimeField(auto_now_add=True)
     category = models.ManyToManyField('Category', related_name='posts')
-    tags = TaggableManager()
-
-    # class Meta:
-    #     ordering = ['-created']
+    tags = TaggableManager(blank=True)
 
     def __unicode__(self):
         return u'%s' % self.title
 
     def get_absolute_url(self):
         return reverse('detail_post', args=[self.slug])
+
+        # class Meta:
+        #     ordering = ['-created']

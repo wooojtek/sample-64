@@ -1,0 +1,24 @@
+- extends 'base.jade'
+- load taggit_extras
+- load i18n webdesign
+block meta_title
+    | Blog |
+block content
+    .row
+        .col-md-8
+            h1 Blog
+            hr
+            block blog
+        .col-md-4
+            h3 Categories
+            hr
+            | {% lorem 1 p random %}
+            h3 Tags
+            hr
+            | {% include_tagcloud 'blog.post' %}
+//-
+            hr
+            {% for tag in tags %}
+            {{tag}} ({{tag.num_times}})
+            {% endfor %}
+            {% get_tagcloud as tags for 'blog.post' %}
